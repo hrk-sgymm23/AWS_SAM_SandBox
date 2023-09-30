@@ -26,6 +26,19 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+      Policies:
+        - AWSLambda_FullAccess
+      Layers:
+        - !Ref CorsHeadersLayer
+
+  CorsHeadersLayer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+        LayerName: cors-headers
+        Description: CORS Headers Layer
+        ContentUri: cors_headers/
+        CompatibleRuntimes:
+          - python3.9
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function

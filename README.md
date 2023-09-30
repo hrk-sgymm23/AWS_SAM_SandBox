@@ -1,3 +1,7 @@
+# AWS SAM 検証用リポジトリ
+## チュートリアル: Hello World アプリケーションのデプロイよりSAMの環境構築を行なった
+https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html
+
 # sam-app
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
