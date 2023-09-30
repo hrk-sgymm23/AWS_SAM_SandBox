@@ -2,6 +2,36 @@
 ## チュートリアル: Hello World アプリケーションのデプロイよりSAMの環境構築を行なった
 https://docs.aws.amazon.com/ja_jp/serverless-application-model/latest/developerguide/serverless-getting-started-hello-world.html
 
+## SAMコマンド 〜デプロイまで
+```bash
+# クレデンシャルをセット
+export AWS_PROFILE=xxx
+# プロジェクト作成
+$ sam init
+
+$ sam build
+
+$ sam-app sam deploy --guided
+
+  Looking for config file [samconfig.toml] :  Found
+  Reading default arguments  :  Success
+
+  Setting default arguments for 'sam deploy'
+  =========================================
+  Stack Name [sam-app]:
+  AWS Region [us-west-2]:
+  #Shows you resources changes to be deployed and require a 'Y' to initiate deploy
+  Confirm changes before deploy [Y/n]: n
+  #SAM needs permission to be able to create roles to connect to the resources in your template
+  Allow SAM CLI IAM role creation [Y/n]:
+  #Preserves the state of previously provisioned resources when an operation fails
+  Disable rollback [y/N]:
+  HelloWorldFunction may not have authorization defined, Is this okay? [y/N]: y
+  Save arguments to configuration file [Y/n]:
+  SAM configuration file [samconfig.toml]:
+  SAM configuration environment [default]:
+```
+
 # sam-app
 
 This project contains source code and supporting files for a serverless application that you can deploy with the SAM CLI. It includes the following files and folders.
