@@ -10,7 +10,7 @@ def get_cors_headers(origin):
 def lambda_handler(event, context):
     origin = event["headers"].get("origin")
 
-    allowed_origins = ['http://localhost:3000', 'https://d3uwz4aj2jk54u.cloudfront.net/index.html']
+    allowed_origins = ['http://localhost:3000', 'https://d3uwz4aj2jk54u.cloudfront.net']
 
     if origin in allowed_origins:
         cors_headers = get_cors_headers(origin)
