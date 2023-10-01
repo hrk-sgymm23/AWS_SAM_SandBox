@@ -18,6 +18,9 @@ Resources:
       CodeUri: hello_world/
       Handler: app.lambda_handler
       Runtime: python3.9
+      Environment:  # 環境変数を定義
+        Variables:
+          ALLOWED_ORIGINS: 'http://localhost:3000,https://d3uwz4aj2jk54u.cloudfront.net'
       Architectures:
         - x86_64
       Events:
@@ -28,17 +31,6 @@ Resources:
             Method: get
       Policies:
         - AWSLambda_FullAccess
-      Layers:
-        - !Ref CorsHeadersLayer
-
-  CorsHeadersLayer:
-    Type: AWS::Serverless::LayerVersion
-    Properties:
-        LayerName: cors-headers
-        Description: CORS Headers Layer
-        ContentUri: cors_headers/
-        CompatibleRuntimes:
-          - python3.9
 
 Outputs:
   # ServerlessRestApi is an implicit API created out of Events key under Serverless::Function
